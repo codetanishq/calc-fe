@@ -171,9 +171,11 @@ useEffect(() => {
         //     });
     
         if (canvas) {
+            console.log("API URL:", import.meta.env.VITE_API_URL);
+
             const response = await axios({
                 method: 'post',
-                url: `${import.meta.env.VITE_API_URL}/calculate`,
+                url: `https://calc-be-1092.onrender.com/calculate`,
                 data: {
                     image: canvas.toDataURL('image/png'),
                     dict_of_vars: dictOfVars
